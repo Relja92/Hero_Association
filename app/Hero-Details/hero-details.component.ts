@@ -23,7 +23,6 @@ export class HeroDetailsComponent {
     this.sub = this.route
         .params
         .subscribe(params => {
-            // Récupération des valeurs de l'URL
             this.id = params['id']; // --> Name must match wanted paramter
     });
 		this._heroService.getSingleUser(this.id)
