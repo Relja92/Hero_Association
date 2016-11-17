@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <th>Full Name</th>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th>Details</th>
+  </tr>
+  <tr *ngFor="let user of users async">
+    <td>{{user.name}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.address.street}}</td>
+    <td>{{user.phone}}</td>
+    <td><button md-raised-button  [routerLink]="['/hero', user.id]" (click) = seeDetails(user.id)>See Details </button></td>
+  </tr>
+
+</table>
