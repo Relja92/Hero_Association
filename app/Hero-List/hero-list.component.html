@@ -1,19 +1,30 @@
-<table>
-  <tr>
-    <th>Full Name</th>
-    <th>Username</th>
-    <th>Email</th>
-    <th>Address</th>
-    <th>Phone</th>
-    <th>Details</th>
-  </tr>
-  <tr *ngFor="let user of users async">
-    <td>{{user.name}}</td>
-    <td>{{user.username}}</td>
-    <td>{{user.email}}</td>
-    <td>{{user.address.street}}</td>
-    <td>{{user.phone}}</td>
-    <td><button md-raised-button  [routerLink]="['/hero', user.id]" (click) = seeDetails(user.id)>See Details </button></td>
-  </tr>
+<div class='row'>
+    <div class='col-md-2'>Search by:</div>
+    <div class='col-md-4'>
+        <input type='text'
+                [(ngModel)]='searchCriteria'/>
+    </div>
+</div>
+<table class="mdl-data-table mdl-js-data-table">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Full Name</th>
+      <th class="mdl-data-table__cell--non-numeric">Active</th>
+      <th class="mdl-data-table__cell--non-numeric">Gender</th>
+      <th class="mdl-data-table__cell--non-numeric">Address</th>
+      <th class="mdl-data-table__cell--non-numeric">Age</th>
+      <th class="mdl-data-table__cell--non-numeric">Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users | heroFilter:searchCriteria   async  ">
+      <td class="mdl-data-table__cell--non-numeric">{{user.name}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{user.isActive}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{user.gender}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{user.address}}</td>
+      <td class="mdl-data-table__cell">{{user.age}}</td>
+      <td class="mdl-data-table__cell--non-numeric"><button [routerLink]="['/hero', user.id]" (click) = seeDetails(user.id)>See Details </button></td>
+    </tr>
 
+  </tbody>
 </table>

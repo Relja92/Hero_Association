@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class HeroService {
     
-    private _allUsers = 'https://jsonplaceholder.typicode.com/users';
+    private _allUsers = 'http://localhost:4000/heroes';
     
     constructor(private _http: Http) { }
     

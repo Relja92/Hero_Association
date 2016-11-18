@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IUser } from '../Interfaces/User';
 import { HeroService } from '../Services/hero.service';
 
+
 @Component({
   templateUrl: 'app/Hero-List/hero-list.component.html',
   styleUrls: ['app/Hero-List/hero-list.component.css'],
@@ -10,7 +11,7 @@ import { HeroService } from '../Services/hero.service';
 export class HeroListComponent implements OnInit { 
     users: IUser[];
     errorMessage: string;
-     
+    searchCriteria: string ="";
     constructor(private _heroService: HeroService) {
 
     } 

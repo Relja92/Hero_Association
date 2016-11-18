@@ -1,7 +1,8 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
+import { FormsModule }   from '@angular/forms';
+
 
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,6 +15,9 @@ import { CrisisDetailsComponent } from './Crisis-Details/crisis-details.componen
 import { PageNotFoundComponent } from './Page-Not-Found/page-not-found.component';
 import { Navigation } from './shared/Navigation/navigation.component';
 import { Footer } from './shared/Footer/footer.component';
+import { MDL } from './Directives/MaterialDesignLiteUpgradeElement';
+import { HeroFilterPipe } from './Hero-List/hero-list.pipe';
+
 const appRoutes: Routes = [
   { path: 'hero/:id', component: HeroDetailsComponent },
   { path: 'crisis-center', component: CrisisListComponent },
@@ -29,16 +33,23 @@ const appRoutes: Routes = [
   { path: '**', component: PageNotFoundComponent }
 ];
 @NgModule({
-  imports:      [HttpModule, BrowserModule, RouterModule.forRoot(appRoutes), MaterialModule.forRoot() ],
-  declarations: [ 
+  imports:      [
+    HttpModule,
+    BrowserModule, 
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
+  ],
+  declarations: [
     AppComponent,
     HeroListComponent,
     HeroDetailsComponent,
     CrisisListComponent,
     CrisisDetailsComponent,
     PageNotFoundComponent,
-    Navigation, 
-    Footer
+    Navigation,
+    Footer,
+    MDL,
+    HeroFilterPipe
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap:    [ AppComponent ]
