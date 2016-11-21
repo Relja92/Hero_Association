@@ -22,8 +22,13 @@ export class HeroListComponent implements OnInit {
 			error => this.errorMessage = <any>error);
 	};
 
-  seeDetails(id:string): void{
-    console.log(id);
+  deleteHero(id:string): void{
+    this._heroService.deleteHero(id)
+			.subscribe(response => {
+          console.log(response);
+          this.ngOnInit();
+      },
+			error => this.errorMessage = <any>error);
   }
 
 	

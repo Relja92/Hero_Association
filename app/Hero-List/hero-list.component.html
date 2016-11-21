@@ -1,29 +1,36 @@
 <div class='row'>
     <div class='col-md-2'>Search by:</div>
     <div class='col-md-4'>
-        <input type='text'
-                [(ngModel)]='searchCriteria'/>
+        <input type='text' [(ngModel)]='searchCriteria'/>
     </div>
 </div>
 <table class="mdl-data-table mdl-js-data-table">
   <thead>
     <tr>
       <th class="mdl-data-table__cell--non-numeric">Full Name</th>
-      <th class="mdl-data-table__cell--non-numeric">Active</th>
-      <th class="mdl-data-table__cell--non-numeric">Gender</th>
-      <th class="mdl-data-table__cell--non-numeric">Address</th>
+      <th class="mdl-data-table__cell--non-numeric">Alias</th>
+      <th class="mdl-data-table__cell--non-numeric">Race</th>
+      <th class="mdl-data-table__cell--non-numeric">Location</th>
       <th class="mdl-data-table__cell--non-numeric">Age</th>
+      <th class="mdl-data-table__cell--non-numeric">Level</th>
+      <th class="mdl-data-table__cell--non-numeric">Rank</th>
       <th class="mdl-data-table__cell--non-numeric">Details</th>
+      <th class="mdl-data-table__cell--non-numeric">Delete</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of users | heroFilter:searchCriteria   async  ">
-      <td class="mdl-data-table__cell--non-numeric">{{user.name}}</td>
-      <td class="mdl-data-table__cell--non-numeric">{{user.isActive}}</td>
-      <td class="mdl-data-table__cell--non-numeric">{{user.gender}}</td>
-      <td class="mdl-data-table__cell--non-numeric">{{user.address}}</td>
-      <td class="mdl-data-table__cell">{{user.age}}</td>
-      <td class="mdl-data-table__cell--non-numeric"><button [routerLink]="['/hero', user.id]" (click) = seeDetails(user.id)>See Details </button></td>
+    <tr *ngFor="let hero of users | heroFilter:searchCriteria   async  ">
+      <td class="mdl-data-table__cell--non-numeric">{{hero.name}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{hero.alias}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{hero.race}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{hero.location}}</td>
+      <td class="mdl-data-table__cell">{{hero.age}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{hero.level}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{hero.rank}}</td>
+      <td class="mdl-data-table__cell--non-numeric"><button [routerLink]="['/hero', hero.id]">See Details </button></td>
+      <td class="mdl-data-table__cell--non-numeric"><button [routerLink]="['/updateHero', hero.id]">Update </button></td>
+      
+      <td class="mdl-data-table__cell--non-numeric"><button  (click) = deleteHero(hero.id)>Delete </button></td>
     </tr>
 
   </tbody>
