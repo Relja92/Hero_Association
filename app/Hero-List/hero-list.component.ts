@@ -15,18 +15,20 @@ export class HeroListComponent implements OnInit {
     constructor(private _heroService: HeroService) {
 
     } 
-            
+    loadAllHeroes():void{
+      this._heroService.getUsers()
+        .subscribe(users => this.users = users,
+        error => this.errorMessage = <any>error);
+    }       
     ngOnInit(): void {
-		this._heroService.getUsers()
-			.subscribe(users => this.users = users,
-			error => this.errorMessage = <any>error);
-	};
+      this.loadAllHeroes();
+	  };
 
   deleteHero(id:string): void{
     this._heroService.deleteHero(id)
 			.subscribe(response => {
           console.log(response);
-          this.ngOnInit();
+          this.loadAllHeroes();
       },
 			error => this.errorMessage = <any>error);
   }

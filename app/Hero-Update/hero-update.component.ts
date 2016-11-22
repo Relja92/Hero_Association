@@ -12,7 +12,7 @@ export class HeroUpdateComponent {
     user: IUser[];
     errorMessage: string;
     model: Object = {};
-    constructor(private _heroService: HeroService, public route: ActivatedRoute) {
+    constructor(private _heroService: HeroService, public route: ActivatedRoute, private _router:Router) {
 
     } 
     
@@ -33,6 +33,7 @@ export class HeroUpdateComponent {
         this._heroService.updateHero(this.id,this.model)
         .subscribe(response => {
             console.log(response);
+            this._router.navigate( ['heroes'] );
         },
         error => {
             console.log(error);
