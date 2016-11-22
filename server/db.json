@@ -8,12 +8,12 @@
       "location": "Z-City",
       "level": "B",
       "rank": "7",
-      "id": 1
+      "id": "1"
     },
     {
       "name": "Genos",
       "alias": "Demon Cyborg",
-      "race": "Human (Cyborg)",
+      "race": "Human/Cyborg",
       "age": "19",
       "location": "Z-City",
       "level": "S",

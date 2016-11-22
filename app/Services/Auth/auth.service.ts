@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IUser } from '../Interfaces/User';
+import { IUser } from '../../Interfaces/User';
 import 'rxjs/Rx';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
@@ -21,12 +21,6 @@ export class HeroService {
         return this._http.get(this._heroes+'/'+id)
             .map((response: Response) => <IUser[]>response.json())
             .do(data => console.log("All: " + JSON.stringify(data)))
-            .catch(this.handleError);
-    }
-    loginSimulation(name:string): Observable<IUser[]> {
-        return this._http.get(this._heroes+"?name="+name)
-            .map((response: Response) => <IUser[]>response.json())
-            .do(response => {})
             .catch(this.handleError);
     }
     addHero(model: Object):Observable<IUser[]>{

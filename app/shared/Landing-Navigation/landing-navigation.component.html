@@ -1,0 +1,16 @@
+<!-- Always shows a header, even in smaller screens. -->
+<div mdl class="mdl-layout mdl-js-layout mdl-layout--fixed-header" *ngIf="!isLoggedIn" >
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="/login">Login</a>
+          <a class="mdl-navigation__link" routerLink="/register" routerLinkActive="active">Register</a>
+        </nav>
+    </div>
+  </header>
+
+</div>
+

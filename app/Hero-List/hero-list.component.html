@@ -15,6 +15,7 @@
       <th class="mdl-data-table__cell--non-numeric">Level</th>
       <th class="mdl-data-table__cell--non-numeric">Rank</th>
       <th class="mdl-data-table__cell--non-numeric">Details</th>
+      <th class="mdl-data-table__cell--non-numeric">Edit</th>
       <th class="mdl-data-table__cell--non-numeric">Delete</th>
     </tr>
   </thead>
@@ -28,7 +29,7 @@
       <td class="mdl-data-table__cell--non-numeric">{{hero.level}}</td>
       <td class="mdl-data-table__cell--non-numeric">{{hero.rank}}</td>
       <td class="mdl-data-table__cell--non-numeric"><button [routerLink]="['/hero', hero.id]">See Details </button></td>
-      <td class="mdl-data-table__cell--non-numeric"><button [routerLink]="['/updateHero', hero.id]">Update </button></td>
+      <td class="mdl-data-table__cell--non-numeric"><button [routerLink]="['/updateHero', hero.id]">Edit </button></td>
       
       <td class="mdl-data-table__cell--non-numeric"><button  (click) = deleteHero(hero.id)>Delete </button></td>
     </tr>
