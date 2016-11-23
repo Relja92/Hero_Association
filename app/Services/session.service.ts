@@ -17,7 +17,16 @@ export class SessionService {
         localStorage.setItem('level', sessionData[0].level);
         localStorage.setItem('rank', sessionData[0].rank);
     }
-    
+    saveAfterRegister(sessionData:Object):void{
+        localStorage.setItem('id', sessionData.id);
+        localStorage.setItem('name', sessionData.name);
+        localStorage.setItem('alias', sessionData.alias);
+        localStorage.setItem('age', sessionData.age);
+        localStorage.setItem('race', sessionData.race);
+        localStorage.setItem('location', sessionData.location);
+        localStorage.setItem('level', sessionData.level);
+        localStorage.setItem('rank', sessionData.rank);
+    }
     clear():void{
         localStorage.removeItem('id');
         localStorage.removeItem('name');

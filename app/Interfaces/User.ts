@@ -1,5 +1,6 @@
 export interface IUser {
 	id: Number;
+	password:String;
 	name: string;
 	username: string;
 	email: string;
@@ -12,6 +13,7 @@ export interface IUser {
 export class Event implements IUser {
 	constructor(
         public id: Number,
+		public password:String,
         public name: string,
         public username: string,
         public email: string,

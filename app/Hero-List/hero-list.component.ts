@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IUser } from '../Interfaces/User';
-import { HeroService } from '../Services/hero.service';
+import { HeroService } from '../Services/Hero-Service/hero.service';
 
 
 @Component({
@@ -17,7 +17,9 @@ export class HeroListComponent implements OnInit {
     } 
     loadAllHeroes():void{
       this._heroService.getUsers()
-        .subscribe(users => this.users = users,
+        .subscribe(response => {
+          this.users = response
+        },
         error => this.errorMessage = <any>error);
     }       
     ngOnInit(): void {

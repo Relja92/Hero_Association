@@ -19,6 +19,77 @@
       "level": "S",
       "rank": "17",
       "id": "2"
+    },
+    {
+      "rank": "7",
+      "password": "Password1234",
+      "name": "Marko Reljic",
+      "alias": "Zaraki Kenpachi",
+      "race": "Shinigami",
+      "age": "24",
+      "location": "Sabac",
+      "level": "C",
+      "id": "H1IN2GXMe"
+    },
+    {
+      "rank": "jjkl",
+      "password": "Password1234",
+      "name": "Zaraki",
+      "alias": "Kenpachi",
+      "race": "jljlkjkl",
+      "age": "ljkjkljlk",
+      "location": "jkljkljkl",
+      "level": "ljkjkl",
+      "role": "USER",
+      "id": "Byt7KQXfl"
+    },
+    {
+      "rank": "marko",
+      "password": "marko",
+      "name": "marko",
+      "alias": "marko",
+      "race": "markom",
+      "age": "23",
+      "location": "marko",
+      "level": "mrko",
+      "role": "USER",
+      "id": "SyGpyVmze"
+    },
+    {
+      "rank": "marko@test.com",
+      "password": "Password1234",
+      "name": "dsadsadsa11",
+      "alias": "dsasad",
+      "race": "dsasdadsa",
+      "age": "dsadsa",
+      "location": "dsadasd",
+      "level": "adsadsads",
+      "role": "USER",
+      "id": "S1zOGE7zl"
+    },
+    {
+      "rank": "ljk",
+      "password": "Password1234",
+      "name": "jkljkl",
+      "alias": "jklljkljk",
+      "race": "jkl",
+      "age": "jklljk",
+      "location": "jlk",
+      "level": "ljk",
+      "role": "USER",
+      "id": "BkQiG4mfx"
+    },
+    {
+      "rank": "marko@test.com",
+      "password": "Password1234",
+      "name": "jkj",
+      "alias": "jlljk",
+      "race": "jkl",
+      "age": "jlk",
+      "location": "jklljk",
+      "level": "l",
+      "role": "USER",
+      "id": "B1uxXVXfl"
     }
   ],
   "crises": []

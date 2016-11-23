@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IUser } from '../Interfaces/User';
-import { HeroService } from '../Services/hero.service';
+import { HeroService } from '../Services/Hero-Service/hero.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({

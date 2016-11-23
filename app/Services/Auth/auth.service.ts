@@ -5,47 +5,29 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class HeroService {
+export class AuthService {
     
     private _heroes= 'http://localhost:4000/heroes';
     
     constructor(private _http: Http) { }
-    
-    getUsers(): Observable<IUser[]> {
-        return this._http.get(this._heroes)
+    loginSimulation(model:Object): Observable<IUser[]> {
+        return this._http.get(this._heroes+"?name="+model.name)
             .map((response: Response) => <IUser[]>response.json())
-            .do(data => console.log("All: " + JSON.stringify(data)))
+            .do(response => {
+                if(response[0].password !== model.password){
+                    alert('Invalid Credentials');
+                    throw new Error('Invalid Credentials')
+                }
+            })
             .catch(this.handleError);
     }
-    getSingleUser(id:string): Observable<IUser[]> {
-        return this._http.get(this._heroes+'/'+id)
-            .map((response: Response) => <IUser[]>response.json())
-            .do(data => console.log("All: " + JSON.stringify(data)))
-            .catch(this.handleError);
-    }
-    addHero(model: Object):Observable<IUser[]>{
+    registerSimulation(model: Object):Observable<IUser[]>{
         let body = model;
+        model.role="USER";
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers, method: "post" });
  
         return this._http.post(this._heroes, body,options)
-            .map(res => res.json())
-            .catch(this.handleError);
-    }
-    deleteHero(id:string): Observable<IUser[]> {
-        return this._http.delete(this._heroes+'/'+id)
-            .map((response: Response) => <IUser[]>response.json())
-            .do(response => {
-                console.log(response);
-            })
-            .catch(this.handleError);
-    }
-    updateHero(id:string, model: Object):Observable<IUser[]>{
-        let body = model;
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers, method: "put" });
- 
-        return this._http.put(this._heroes+'/'+id, body,options)
             .map(res => res.json())
             .catch(this.handleError);
     }

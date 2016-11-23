@@ -6,13 +6,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }  from './app.component';
 import { HeroListComponent } from './Hero-List/hero-list.component';
 import { LoginComponent } from './Login/login.component';
-import { HeroAddComponent } from './Hero-Add/hero-add.component';
+import { RegisterComponent } from './Register/register.component';
 import { HeroDetailsComponent } from './Hero-Details/hero-details.component';
 import { HeroUpdateComponent } from './Hero-Update/hero-update.component';
 import { CrisisListComponent } from './Crisis-List/crisis-list.component';
 import { CrisisDetailsComponent } from './Crisis-Details/crisis-details.component';
 import { PageNotFoundComponent } from './Page-Not-Found/page-not-found.component';
 import { LandingNavigation } from './shared/Landing-Navigation/landing-navigation.component';
+import { ProfileComponent } from './Profile/profile.component';
 import { Navigation } from './shared/Navigation/navigation.component';
 import { Footer } from './shared/Footer/footer.component';
 import { MDL } from './Directives/MaterialDesignLiteUpgradeElement';
@@ -26,8 +27,9 @@ const appRoutes: Routes = [
   { path: 'updateHero/:id', component: HeroUpdateComponent },
   { path: 'crisis-center', component: CrisisListComponent },
   { path: 'crisis/:id', component: CrisisDetailsComponent },
-  { path: 'addHero', component: HeroAddComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: 'heroes', component: HeroListComponent, canActivate: [AuthGuard]},
   { path: '', component: LoginComponent },
   { path: '**', component: PageNotFoundComponent }
@@ -51,9 +53,10 @@ const appRoutes: Routes = [
     Footer,
     MDL,
     HeroFilterPipe,
-    HeroAddComponent,
     LoginComponent,
-    LandingNavigation
+    RegisterComponent,
+    LandingNavigation,
+    ProfileComponent
     
   ],
   providers:[AuthGuard, SessionService],
